@@ -1,8 +1,8 @@
-export default {
+export default {  
   ssr: false,
   target: 'static',
   modern: true,
-  
+
   head: {
     title: 'social-worker',
     meta: [
@@ -27,6 +27,7 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/fontawesome',
+    '@nuxtjs/i18n',
     '@nuxtjs/stylelint-module',
     '@nuxtjs/style-resources'
   ],
@@ -49,6 +50,50 @@ export default {
         'faMapMarker',
         'faUser'
       ]
+    }
+  },
+
+  i18n: {
+    baseUrl: 'https://www.bonkers.ie',
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      alwaysReload: true,
+      useCookie: true
+    },
+    langDir: 'lang/',
+    lazy: true,
+    locales: [{ code: 'en', file: 'en-IE', name: 'English', iso: 'en-IE' }],
+    vueI18n: {
+      fallbackLocale: 'en',
+      numberFormats: {
+        en: {
+          currency: {
+            style: 'currency',
+            currency: 'EUR'
+          },
+          currencyRound: {
+            style: 'currency',
+            currency: 'EUR',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          },
+          percent: {
+            style: 'percent',
+            maximumFractionDigits: 2
+          },
+          toWholeNumber: {
+            style: 'decimal',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0
+          }
+        }
+      },
+      silentTranslationWarn: true
+    },
+    vueI18nLoader: true,
+    vuex: {
+      syncLocale: true,
+      syncMessages: true
     }
   },
 

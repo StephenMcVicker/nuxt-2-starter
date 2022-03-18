@@ -1,11 +1,14 @@
 <template lang="pug">
   main
-    h1 Test Page
-    button(@click="changeRoute") Back to Main
+    h1 {{ $t('test.header') }}
+    v-button(@btn-click="changeRoute") {{ $t('test.buttonCTA') }}
 </template>
 
 <script>
+import VButton from '@/components/ui/Button.vue';
+
 export default {
+  components: { VButton },
   methods: {
     changeRoute() {
       this.$router.push('/');
@@ -13,3 +16,14 @@ export default {
   }
 };
 </script>
+
+<i18n>
+  {
+    "en": {
+      "test": {
+        "header": "Test Page",
+        "buttonCTA": "Back To Main"
+      }
+    }
+  }
+</i18n>

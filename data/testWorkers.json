@@ -1,0 +1,26 @@
+{
+  "testWorkers": [
+    {
+      "id": 1,
+      "firstName": "Claire",
+      "lastName": "Lawlor",
+      "exp": "7 years",
+      "likes": "97%",
+      "patients": 80,
+      "location": "Kilkenny",
+      "availability": "Today",
+      "vetted": true
+    },
+    {
+      "id": 1,
+      "firstName": "Jackie",
+      "lastName": "",
+      "exp": "2 years",
+      "likes": "50%",
+      "patients": 200,
+      "location": "Clancy Quay",
+      "availability": "Today",
+      "vetted": false
+    }
+  ]
+}
