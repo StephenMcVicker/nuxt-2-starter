@@ -7,15 +7,14 @@
                         @toggle-menu='menuIsOpen = !menuIsOpen')
     nuxt-child
     footer
-      .menu
-        .circle.active(v-wave)
-          font-awesome-icon(:icon="['fas', 'home']")
-        .circle(v-wave)
-          font-awesome-icon(:icon="['fas', 'calendar-week']")
-        .circle(v-wave)
-          font-awesome-icon(:icon="['fas', 'envelope']")
-        .circle(v-wave)
-          font-awesome-icon(:icon="['fas', 'user']")
+      .circle.active(v-wave)
+        font-awesome-icon(:icon="['fas', 'home']")
+      .circle(v-wave)
+        font-awesome-icon(:icon="['fas', 'calendar-week']")
+      .circle(v-wave)
+        font-awesome-icon(:icon="['fas', 'envelope']")
+      .circle(v-wave)
+        font-awesome-icon(:icon="['fas', 'user']")
 </template>
 
 <script>
@@ -55,6 +54,7 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   overflow-x: hidden;
+  position: relative;
 }
 
 main {
@@ -85,36 +85,36 @@ header {
 }
 
 footer {
+  align-items: center;
+  background-color: $white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   bottom: 0;
+  box-shadow: 0px -11px 15px -3px rgba(149, 157, 165, .2);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 1rem;
   position: fixed;
   width: 100%;
 
-  .menu {
+  .circle {
     align-items: center;
-    background-color: $white;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    background-color: none;
+    border-radius: 50vh;
+    color: $grey;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding: 1rem;
+    font-size: 1.5rem;
+    height: 50px;
+    justify-content: center;
+    width: 50px;
 
-    .circle {
-      align-items: center;
-      background-color: none;
-      border-radius: 50vh;
-      color: $grey;
-      display: flex;
-      font-size: 1.5rem;
-      height: 50px;
-      justify-content: center;
-      width: 50px;
-
-      &.active {
-        background-color: $secondary-purple-lighter;
-        color: $primary-purple;
-      }
+    &.active {
+      background-color: $secondary-purple-lighter;
+      color: $primary-purple;
     }
   }
+  
 }
 </style>

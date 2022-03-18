@@ -5,6 +5,7 @@
       h2.small {{ $t('subHeaders.findWorker') }}
     section.workers-search
       h3 {{ $t('Nearby Social Workers') }}
+        span {{ `(${filteredWorkers.length})` }}
       input(v-model="search"
             placeholder="Search by name"
             type="text")
@@ -48,10 +49,17 @@ h2.small {
   font-size: 1rem;
 }
 
+h3 {
+  span {
+    color: $primary-purple;
+    margin-left: .4rem;
+  }
+}
+
 section.workers-search {
   display: flex;
   flex-direction: column;
-  
+
   input {
     padding: .5rem
   }
