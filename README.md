@@ -1,6 +1,6 @@
 ## Social Worker
 
-![Screenshot](screenshot.png)
+![Screenshot](Screenshot.png)
 Screenshot
 
 # About
