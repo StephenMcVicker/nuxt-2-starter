@@ -37,9 +37,9 @@ export default {
   computed: {
     filteredWorkers () {
       const filteredArray = this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
-      if (this.sortBy.length >= 1) {
-        filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
-      }
+      // if (this.sortBy.length >= 1) {
+      //   filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
+      // }
       return filteredArray;
     },
     workers () {
@@ -52,7 +52,8 @@ export default {
   methods: {
     sortingChange () {
       this.sortValue >= this.sortOptions.length -1 ? this.sortValue = 0 : this.sortValue++;
-      this.sortBy = this.sortOptions[this.sortValue]
+      this.sortBy = this.sortOptions[this.sortValue];
+      this.$store.commit('workers/sort', this.sortBy);
     }
   }
 };
