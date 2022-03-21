@@ -9,7 +9,7 @@
       input(v-model="search"
             placeholder="Search by name"
             type="text")
-      p {{ $t('sortWorkers') }}
+      p(@click="sortingChange") {{ $t('sortWorkers') }}
         span {{ this.sortBy }}
       worker(v-for="(worker, workerIndex) in filteredWorkers"
             :key="`worker-${workerIndex}`" 
@@ -30,6 +30,7 @@ export default {
     return {
       sortOptions: ['likes', 'patients', 'location'],
       sortBy: '',
+      sortValue: 0,
       search: ''
     };
   },
@@ -46,9 +47,14 @@ export default {
     }
   },
   created () {
-    this.sortBy = this.sortOptions[0];
+    this.sortBy = this.sortOptions[this.sortValue];
   },
-  methods: {}
+  methods: {
+    sortingChange () {
+      this.sortValue >= this.sortOptions.length -1 ? this.sortValue = 0 : this.sortValue++;
+      this.sortBy = this.sortOptions[this.sortValue]
+    }
+  }
 };
 </script>
 
