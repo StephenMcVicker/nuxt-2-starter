@@ -9,6 +9,8 @@
       input(v-model="search"
             placeholder="Search by name"
             type="text")
+      p {{ $t('sortWorkers') }}
+        span {{ this.sortBy }}
       worker(v-for="(worker, workerIndex) in filteredWorkers"
             :key="`worker-${workerIndex}`" 
             :worker="worker")
@@ -26,16 +28,25 @@ export default {
   middleware: ['test-workers'],
   data() {
     return {
+      sortOptions: ['likes', 'patients', 'location'],
+      sortBy: '',
       search: ''
     };
   },
   computed: {
     filteredWorkers () {
-      return this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
+      const filteredArray = this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
+      if (this.sortBy.length >= 1) {
+        filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
+      }
+      return filteredArray;
     },
     workers () {
        return this.$store.getters[`workers/get`];
     }
+  },
+  created () {
+    this.sortBy = this.sortOptions[0];
   },
   methods: {}
 };

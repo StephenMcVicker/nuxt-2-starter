@@ -1,7 +1,7 @@
 <template lang="pug">
   .body
     header
-      .menu
+      nav
         .logo
         ham-burger-menu(:menuIsOpen='menuIsOpen',
                         @toggle-menu='menuIsOpen = !menuIsOpen')
@@ -32,14 +32,15 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 
-body {
+body,html {
   background-color: $background-grey;
   color: $primary-font-color;
   font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   height: 100%;
-  margin: 0 auto;
+  margin: 0;
+  min-width: fit-content;
   overflow: visible;
   overflow-x: hidden;
   padding: 0;
@@ -68,7 +69,7 @@ section {
 
 <style lang="scss" scoped>
 header {
-  .menu {
+  nav {
     align-items: center;
     display: flex;
     flex-direction: row;
@@ -90,12 +91,11 @@ footer {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   bottom: 0;
-  box-shadow: 0px -11px 15px -3px rgba(149, 157, 165, .2);
-
+  box-shadow: 0 -11px 15px -3px rgba(149, 157, 165, .2);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  padding: 1rem;
+  padding: 1rem 0;
   position: fixed;
   width: 100%;
 

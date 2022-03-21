@@ -3,6 +3,7 @@ export default () => {
     resolve({
       "greeting": "Hi, {name}",
       "nearbyWorkers": "Nearby Social Workers",
+      "sortWorkers": "sort by:",
       "subHeaders": {
         "findWorker": "Let's find you a social worker"
       },

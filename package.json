@@ -9,7 +9,7 @@
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint": "yarn lint:js && yarn lint:style",
-    "slint": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
+    "slint": "stylelint \"**/*.{vue,css}\" --formatter=verbose --ignore-path .gitignore",
     "test": "jest"
   },
   "dependencies": {
