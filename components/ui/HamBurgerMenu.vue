@@ -25,8 +25,9 @@ export default {
   height: 2rem;
   justify-content: space-around;
   right: 1rem;
-  transition: all 0.2s;
+  transition: all $animTimeMenu;
   width: 2rem;
+  z-index: $zIndexMenuHamburger;
 
   [data-open='true'] {
     &:nth-child(1) {
@@ -49,7 +50,7 @@ export default {
 
     /* animation */
     transform-origin: 1px;
-    transition: all 0.2s;
+    transition: all $animTimeMenu;
     width: 2rem;
   }
 }

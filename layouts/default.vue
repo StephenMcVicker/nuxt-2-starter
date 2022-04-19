@@ -5,9 +5,11 @@
         .logo
         ham-burger-menu(:menuIsOpen='menuIsOpen',
                         @toggle-menu='menuIsOpen = !menuIsOpen')
+    .menu(:data-open='menuIsOpen')
     nuxt-child
     footer
-      .circle.active(v-wave)
+      .circle.active(@click="scrollToTop"
+                     v-wave)
         font-awesome-icon(:icon="['fas', 'home']")
       .circle(v-wave)
         font-awesome-icon(:icon="['fas', 'calendar-week']")
@@ -25,6 +27,19 @@ export default {
     return {
       menuIsOpen: false
     };
+  },
+  methods: {
+    scrollToTop() {
+      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      const scrollToOptions = {
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      };
+      isSmoothScrollSupported
+        ? window.scroll(scrollToOptions)
+        : window.scroll(scrollToOptions.left, scrollToOptions.top);
+    }
   }
 };
 </script>
@@ -33,8 +48,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
 @import '~@/assets/scss/resets.scss';
 
-body,html {
-  background-color: $background-grey;
+body,
+html {
+  background-color: $background-blue;
   color: $primary-font-color;
   font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
@@ -45,12 +61,13 @@ body,html {
   overflow-x: hidden;
   padding: 0;
   position: relative;
+  scroll-behavior: smooth;
   text-align: left;
   text-rendering: geometricPrecision;
 }
 
 .body {
-  background-color: $background-grey;
+  background-color: $background-blue;
   max-width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
@@ -85,13 +102,28 @@ header {
   }
 }
 
+.menu {
+  background-color: red;
+  height: 100vh;
+  left: -101%;
+  position: fixed;
+  top: 0;
+  transition: all $animTimeMenu;
+  width: 100%;
+  z-index: $zIndexMenu;
+
+  &[data-open='true'] {
+    left: 0;
+  }
+}
+
 footer {
   align-items: center;
   background-color: $white;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   bottom: 0;
-  box-shadow: 0 -11px 15px -3px rgba(149, 157, 165, .2);
+  box-shadow: 0 -11px 15px -3px rgba(149, 157, 165, 0.2);
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -115,6 +147,5 @@ footer {
       color: $primary-purple;
     }
   }
-  
 }
 </style>
