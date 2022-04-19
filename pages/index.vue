@@ -62,7 +62,7 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  margin-bottom: 40px;
+  margin-bottom: 5rem;
 }
 h2.small {
   font-size: 1rem;
@@ -81,7 +81,7 @@ section.workers-search {
 
   input {
     background-color: $white;
-    border: 0;
+    border: 1px solid $primary-purple;
     border-radius: 50vh;
     color: $primary-font-color;
     margin: .4rem 0;
@@ -96,7 +96,7 @@ section.workers-search {
   }
 
   section.results {
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
 }
 </style>
