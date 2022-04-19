@@ -1,11 +1,12 @@
+ls
 <template lang="pug">
   .body
     header
       nav
         .logo
-        ham-burger-menu(:menuIsOpen='menuIsOpen',
-                        @toggle-menu='menuIsOpen = !menuIsOpen')
-    .menu(:data-open='menuIsOpen')
+        ham-burger-menu(:menuIsOpen='menuOpen',
+                        @toggle-menu='toggleMenu')
+    .menu(:data-open='menuOpen')
     nuxt-child
     footer
       nuxt-link.circle.active(@click="scrollToTop"
@@ -29,12 +30,21 @@ export default {
   components: { HamBurgerMenu },
   data() {
     return {
-      menuIsOpen: false
+      // menuIsOpen: false
     };
+  },
+  computed: {
+    menuOpen() {
+      return this.$store.getters['ui/getMenuOpen'];
+    }
+  },
+  created() {
+    this.$store.commit('setMenuIsOpen', this.menuIsOpen);
   },
   methods: {
     scrollToTop() {
-      const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
+      const isSmoothScrollSupported =
+        'scrollBehavior' in document.documentElement.style;
       const scrollToOptions = {
         top: 0,
         left: 0,
@@ -43,6 +53,9 @@ export default {
       isSmoothScrollSupported
         ? window.scroll(scrollToOptions)
         : window.scroll(scrollToOptions.left, scrollToOptions.top);
+    },
+    toggleMenu() {
+      this.$store.commit('ui/toggleMenu');
     }
   }
 };
