@@ -8,14 +8,18 @@
     .menu(:data-open='menuIsOpen')
     nuxt-child
     footer
-      .circle.active(@click="scrollToTop"
-                     v-wave)
+      nuxt-link.circle.active(@click="scrollToTop"
+                              to="/"
+                              v-wave)
         font-awesome-icon(:icon="['fas', 'home']")
-      .circle(v-wave)
+      nuxt-link.circle(to="/TestPage/" 
+                       v-wave)
         font-awesome-icon(:icon="['fas', 'calendar-week']")
-      .circle(v-wave)
+      nuxt-link.circle(to="/TestPage/"
+                       v-wave)
         font-awesome-icon(:icon="['fas', 'envelope']")
-      .circle(v-wave)
+      nuxt-link.circle(to="/TestPage/"
+                       v-wave)
         font-awesome-icon(:icon="['fas', 'user']")
 </template>
 
@@ -62,6 +66,7 @@ html {
   padding: 0;
   position: relative;
   scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
   text-align: left;
   text-rendering: geometricPrecision;
 }
@@ -140,6 +145,7 @@ footer {
     font-size: 1.5rem;
     height: 50px;
     justify-content: center;
+    outline: none;
     width: 50px;
 
     &.active {
