@@ -9,18 +9,25 @@ ls
     .menu(:data-open='menuOpen')
     nuxt-child
     footer
-      nuxt-link.circle.active(@click="scrollToTop"
-                              to="/"
-                              v-wave)
+      .circle(@click="setActiveTab(1)"
+              to="/"
+              v-wave
+              :class="{active: activeTab === 1}")
         font-awesome-icon(:icon="['fas', 'home']")
-      nuxt-link.circle(to="/TestPage/" 
-                       v-wave)
+      .circle(@click="setActiveTab(2)"
+              to="/TestPage/" 
+              v-wave
+              :class="{active: activeTab === 2}")
         font-awesome-icon(:icon="['fas', 'calendar-week']")
-      nuxt-link.circle(to="/TestPage/"
-                       v-wave)
+      .circle(@click="setActiveTab(3)"
+              to="/TestPage/"
+              v-wave
+              :class="{active: activeTab === 3}")
         font-awesome-icon(:icon="['fas', 'envelope']")
-      nuxt-link.circle(to="/TestPage/"
-                       v-wave)
+      .circle(@click="setActiveTab(4)"
+              to="/TestPage/"
+              v-wave
+              :class="{active: activeTab === 4}")
         font-awesome-icon(:icon="['fas', 'user']")
 </template>
 
@@ -34,14 +41,22 @@ export default {
     };
   },
   computed: {
+    activeTab() {
+      return this.$store.getters['ui/getNavActiveTab'];
+    },
     menuOpen() {
       return this.$store.getters['ui/getMenuOpen'];
     }
   },
-  created() {
-    this.$store.commit('setMenuIsOpen', this.menuIsOpen);
-  },
   methods: {
+    setActiveTab(tab) {
+      this.$store.commit('ui/setNavActiveTab', tab);
+      if (this.activeTab === 1) {
+        this.$router.push('/');
+      } else {
+        this.$router.push('/TestPage/');
+      }
+    },
     scrollToTop() {
       const isSmoothScrollSupported =
         'scrollBehavior' in document.documentElement.style;
