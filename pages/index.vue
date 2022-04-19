@@ -11,9 +11,10 @@
             type="text")
       p(@click="sortingChange") {{ $t('sortWorkers') }}
         span {{ this.sortBy }}
-      worker(v-for="(worker, workerIndex) in filteredWorkers"
-            :key="`worker-${workerIndex}`" 
-            :worker="worker")
+      section.results
+        worker(v-for="(worker, workerIndex) in filteredWorkers"
+              :key="`worker-${workerIndex}`" 
+              :worker="worker")
 </template>
 
 <script>
@@ -79,7 +80,23 @@ section.workers-search {
   flex-direction: column;
 
   input {
-    padding: .5rem
+    background-color: $white;
+    border: 0;
+    border-radius: 50vh;
+    color: $primary-font-color;
+    margin: .4rem 0;
+    padding: 1rem;
+  }
+
+  p {
+    span {
+      color: $primary-purple;
+      margin-left: .4rem;
+    }
+  }
+
+  section.results {
+    margin-top: 1rem;
   }
 }
 </style>

@@ -109,6 +109,7 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 1rem;
     padding: 2rem 1rem;
 
     .logo {
