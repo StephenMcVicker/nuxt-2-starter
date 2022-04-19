@@ -31,13 +31,13 @@ export default {
 
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+@import '~@/assets/scss/resets.scss';
 
 body,html {
   background-color: $background-grey;
   color: $primary-font-color;
   font-family: 'Montserrat', sans-serif;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
   height: 100%;
   margin: 0;
   min-width: fit-content;
@@ -50,7 +50,7 @@ body,html {
 }
 
 .body {
-  background: $background-grey;
+  background-color: $background-grey;
   max-width: 100vw;
   min-height: 100vh;
   min-width: 100vw;
