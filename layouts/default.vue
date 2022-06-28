@@ -50,6 +50,11 @@ ls
     },
     methods: {
       setActiveTab (tab) {
+        if (this.activeTab === tab) {
+          this.scrollToTop();
+          return;
+        }
+
         this.$store.commit('ui/setNavActiveTab', tab);
         if (this.activeTab === 1) {
           this.$router.push('/');
@@ -58,16 +63,13 @@ ls
         }
       },
       scrollToTop () {
-        const isSmoothScrollSupported =
-          'scrollBehavior' in document.documentElement.style;
+        const isSmoothScrollSupported = 'scrollBehavior' in document.documentElement.style;
         const scrollToOptions = {
           top: 0,
           left: 0,
           behavior: 'smooth'
         };
-        isSmoothScrollSupported
-          ? window.scroll(scrollToOptions)
-          : window.scroll(scrollToOptions.left, scrollToOptions.top);
+        isSmoothScrollSupported ? window.scroll(scrollToOptions) : window.scroll(scrollToOptions.left, scrollToOptions.top);
       },
       toggleMenu () {
         this.$store.commit('ui/toggleMenu');
