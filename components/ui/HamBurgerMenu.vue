@@ -18,40 +18,40 @@
 </script>
 
 <style lang="scss" scoped>
-  .hamburger {
-    bottom: 1rem;
-    display: flex;
-    flex-flow: column nowrap;
-    height: 2rem;
-    justify-content: space-around;
-    right: 1rem;
-    transition: all $animation-time-menu;
-    width: 2rem;
-    z-index: $z-index-hamburger;
+.hamburger {
+  bottom: 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  height: 2rem;
+  justify-content: space-around;
+  right: 1rem;
+  transition: all $animation-time-menu;
+  width: 2rem;
+  z-index: $z-index-hamburger;
 
-    [data-open='true'] {
-      &:nth-child(1) {
-        transform: rotate(45deg);
-      }
-
-      &:nth-child(2) {
-        opacity: 0;
-      }
-
-      &:nth-child(3) {
-        transform: rotate(-45deg);
-      }
+  [data-open='true'] {
+    &:nth-child(1) {
+      transform: rotate(45deg);
     }
 
-    div {
-      background-color: $secondary-purple;
-      border-radius: 50vh;
-      height: .25rem;
+    &:nth-child(2) {
+      opacity: 0;
+    }
 
-      /* animation */
-      transform-origin: 1px;
-      transition: all $animation-time-menu;
-      width: 2rem;
+    &:nth-child(3) {
+      transform: rotate(-45deg);
     }
   }
+
+  div {
+    background-color: $secondary-purple;
+    border-radius: 50vh;
+    height: 0.25rem;
+
+    /* animation */
+    transform-origin: 1px;
+    transition: all $animation-time-menu;
+    width: 2rem;
+  }
+}
 </style>

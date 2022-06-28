@@ -37,7 +37,12 @@
     },
     computed: {
       filteredWorkers () {
-        const filteredArray = this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
+        const filteredArray =
+          this.search.length > 2
+            ? this.workers.filter((worker) =>
+              worker.firstName.includes(this.search)
+            )
+            : this.workers;
         // if (this.sortBy.length >= 1) {
         //   filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
         // }
@@ -55,7 +60,9 @@
     },
     methods: {
       sortingChange () {
-        this.sortValue >= this.sortOptions.length - 1 ? this.sortValue = 0 : this.sortValue++;
+        this.sortValue >= this.sortOptions.length - 1
+          ? (this.sortValue = 0)
+          : this.sortValue++;
         this.sortBy = this.sortOptions[this.sortValue];
         this.$store.commit('workers/sort', this.sortBy);
       }
@@ -64,49 +71,49 @@
 </script>
 
 <style lang="scss" scoped>
-  header {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    margin: 3rem;
+header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 3rem;
+}
+h2.small {
+  font-size: 1rem;
+}
+
+h3 {
+  span {
+    color: $primary-purple;
+    margin-left: 0.4rem;
   }
-  h2.small {
-    font-size: 1rem;
+}
+
+section.workers-search {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    background-color: $white;
+    border: 1px solid $primary-purple;
+    border-radius: 50vh;
+    color: $primary-font-color;
+    margin: 0.8rem 0;
+    padding: 1rem;
+
+    &:focus {
+      box-shadow: $card-box-shadow;
+    }
   }
 
-  h3 {
+  p {
     span {
       color: $primary-purple;
-      margin-left: .4rem;
+      margin-left: 0.4rem;
     }
   }
 
-  section.workers-search {
-    display: flex;
-    flex-direction: column;
-
-    input {
-      background-color: $white;
-      border: 1px solid $primary-purple;
-      border-radius: 50vh;
-      color: $primary-font-color;
-      margin: .8rem 0;
-      padding: 1rem;
-
-      &:focus {
-        box-shadow: $card-box-shadow;
-      }
-    }
-
-    p {
-      span {
-        color: $primary-purple;
-        margin-left: .4rem;
-      }
-    }
-
-    section.results {
-      margin-top: .5rem;
-    }
+  section.results {
+    margin-top: 0.5rem;
   }
+}
 </style>
