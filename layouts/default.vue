@@ -108,8 +108,31 @@ ls
     position: relative;
   }
 
+  h1 {
+    font-size: 38px;
+    font-weight: 800;
+    line-height: 45px;
+  }
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 42px;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 32px;
+  }
+
   main {
     padding: 0 1rem 8rem 1rem;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 26px;
   }
 
   section {

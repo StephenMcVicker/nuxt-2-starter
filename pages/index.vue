@@ -49,7 +49,9 @@
     },
     created () {
       this.sortBy = this.sortOptions[this.sortValue];
-      this.$store.commit('ui/setNavActiveTab', 1);
+      if (this.$store.getters['ui/getNavActiveTab'] !== 1) {
+        this.$store.commit('ui/setNavActiveTab', 1);
+      }
     },
     methods: {
       sortingChange () {
