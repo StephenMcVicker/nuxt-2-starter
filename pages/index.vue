@@ -49,6 +49,7 @@
     },
     created () {
       this.sortBy = this.sortOptions[this.sortValue];
+      this.$store.commit('ui/setNavActiveTab', 1);
     },
     methods: {
       sortingChange () {
