@@ -7,7 +7,7 @@ export const mutations = {
     state.workers = workers;
   },
   sort (state, soryKey) {
-    state.workers.sort((a,b) => (a[soryKey] > b[soryKey]) ? -1 : 1);
+    state.workers.sort((a, b) => (a[soryKey] > b[soryKey]) ? -1 : 1);
   }
 };
 

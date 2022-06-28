@@ -13,51 +13,51 @@
         span {{ this.sortBy }}
       section.results
         worker(v-for="(worker, workerIndex) in filteredWorkers"
-              :key="`worker-${workerIndex}`" 
+              :key="`worker-${workerIndex}`"
               :worker="worker")
 </template>
 
 <script>
-import Card from '@/components/ui/Card.vue';
-import Test from '@/components/Test.vue';
-import Worker from '@/components/Worker.vue';
-import VButton from '@/components/ui/Button.vue';
+  import Card from '@/components/ui/Card.vue';
+  import Test from '@/components/Test.vue';
+  import Worker from '@/components/Worker.vue';
+  import VButton from '@/components/ui/Button.vue';
 
-export default {
-  components: { Card, Test, Worker, VButton },
-  layout: 'default',
-  middleware: ['test-workers'],
-  data() {
-    return {
-      sortOptions: ['likes', 'patients', 'location'],
-      sortBy: '',
-      sortValue: 0,
-      search: ''
-    };
-  },
-  computed: {
-    filteredWorkers () {
-      const filteredArray = this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
-      // if (this.sortBy.length >= 1) {
-      //   filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
-      // }
-      return filteredArray;
+  export default {
+    components: { Card, Test, Worker, VButton },
+    layout: 'default',
+    middleware: ['test-workers'],
+    data () {
+      return {
+        sortOptions: ['likes', 'patients', 'location'],
+        sortBy: '',
+        sortValue: 0,
+        search: ''
+      };
     },
-    workers () {
-       return this.$store.getters[`workers/get`];
-    }
-  },
-  created () {
-    this.sortBy = this.sortOptions[this.sortValue];
-  },
-  methods: {
-    sortingChange () {
-      this.sortValue >= this.sortOptions.length -1 ? this.sortValue = 0 : this.sortValue++;
+    computed: {
+      filteredWorkers () {
+        const filteredArray = this.search.length > 2 ? this.workers.filter(worker => worker.firstName.includes(this.search)) : this.workers;
+        // if (this.sortBy.length >= 1) {
+        //   filteredArray.sort((a,b) => (a[this.sortBy] > b[this.sortBy]) ? -1 : 1);
+        // }
+        return filteredArray;
+      },
+      workers () {
+        return this.$store.getters[`workers/get`];
+      }
+    },
+    created () {
       this.sortBy = this.sortOptions[this.sortValue];
-      this.$store.commit('workers/sort', this.sortBy);
+    },
+    methods: {
+      sortingChange () {
+        this.sortValue >= this.sortOptions.length - 1 ? this.sortValue = 0 : this.sortValue++;
+        this.sortBy = this.sortOptions[this.sortValue];
+        this.$store.commit('workers/sort', this.sortBy);
+      }
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

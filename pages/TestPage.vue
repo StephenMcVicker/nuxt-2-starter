@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import VButton from '@/components/ui/Button.vue';
+  import VButton from '@/components/ui/Button.vue';
 
-export default {
-  components: { VButton },
-  methods: {
-    changeRoute() {
-      this.$router.push('/');
+  export default {
+    components: { VButton },
+    methods: {
+      changeRoute () {
+        this.$router.push('/');
+      }
     }
-  }
-};
+  };
 </script>
 
 <i18n>

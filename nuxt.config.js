@@ -1,4 +1,4 @@
-export default {  
+export default {
   ssr: false,
   target: 'static',
   modern: true,

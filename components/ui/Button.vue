@@ -8,23 +8,23 @@
 </template>
 
 <script>
-export default {
-  props: {
-    href: {
-      type: String,
-      default: null
-    }
-  },
-  computed: {
-    type() {
-      if (this.href) {
-        return 'a';
-      } else {
-        return 'button';
+  export default {
+    props: {
+      href: {
+        type: String,
+        default: null
+      }
+    },
+    computed: {
+      type () {
+        if (this.href) {
+          return 'a';
+        } else {
+          return 'button';
+        }
       }
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

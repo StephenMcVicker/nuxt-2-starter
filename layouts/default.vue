@@ -15,7 +15,7 @@ ls
               :class="{active: activeTab === 1}")
         font-awesome-icon(:icon="['fas', 'home']")
       .circle(@click="setActiveTab(2)"
-              to="/TestPage/" 
+              to="/TestPage/"
               v-wave
               :class="{active: activeTab === 2}")
         font-awesome-icon(:icon="['fas', 'calendar-week']")
@@ -32,48 +32,48 @@ ls
 </template>
 
 <script>
-import HamBurgerMenu from '@/components/ui/HamBurgerMenu.vue';
-export default {
-  components: { HamBurgerMenu },
-  data() {
-    return {
+  import HamBurgerMenu from '@/components/ui/HamBurgerMenu.vue';
+  export default {
+    components: { HamBurgerMenu },
+    data () {
+      return {
       // menuIsOpen: false
-    };
-  },
-  computed: {
-    activeTab() {
-      return this.$store.getters['ui/getNavActiveTab'];
+      };
     },
-    menuOpen() {
-      return this.$store.getters['ui/getMenuOpen'];
-    }
-  },
-  methods: {
-    setActiveTab(tab) {
-      this.$store.commit('ui/setNavActiveTab', tab);
-      if (this.activeTab === 1) {
-        this.$router.push('/');
-      } else {
-        this.$router.push('/TestPage/');
+    computed: {
+      activeTab () {
+        return this.$store.getters['ui/getNavActiveTab'];
+      },
+      menuOpen () {
+        return this.$store.getters['ui/getMenuOpen'];
       }
     },
-    scrollToTop() {
-      const isSmoothScrollSupported =
-        'scrollBehavior' in document.documentElement.style;
-      const scrollToOptions = {
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      };
-      isSmoothScrollSupported
-        ? window.scroll(scrollToOptions)
-        : window.scroll(scrollToOptions.left, scrollToOptions.top);
-    },
-    toggleMenu() {
-      this.$store.commit('ui/toggleMenu');
+    methods: {
+      setActiveTab (tab) {
+        this.$store.commit('ui/setNavActiveTab', tab);
+        if (this.activeTab === 1) {
+          this.$router.push('/');
+        } else {
+          this.$router.push('/TestPage/');
+        }
+      },
+      scrollToTop () {
+        const isSmoothScrollSupported =
+          'scrollBehavior' in document.documentElement.style;
+        const scrollToOptions = {
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        };
+        isSmoothScrollSupported
+          ? window.scroll(scrollToOptions)
+          : window.scroll(scrollToOptions.left, scrollToOptions.top);
+      },
+      toggleMenu () {
+        this.$store.commit('ui/toggleMenu');
+      }
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss">

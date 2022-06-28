@@ -8,8 +8,8 @@
     "start": "nuxt start --modern=server",
     "generate": "nuxt generate",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
-    "lint": "yarn lint:js && yarn lint:style",
-    "slint": "stylelint \"**/*.{vue,css}\" --formatter=verbose --ignore-path .gitignore",
+    "lint": "eslint ./ --ext .js,.vue --fix",
+    "slint": "stylelint '**/*.{css,scss,vue}' --formatter=verbose",
     "test": "jest"
   },
   "dependencies": {
@@ -17,6 +17,7 @@
     "@nuxtjs/i18n": "^7.2.0",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.15.1",
+    "eslint-plugin-vue-scoped-css": "^2.2.0",
     "nuxt": "^2.15.8",
     "stylelint-order": "^5.0.0",
     "v-wave": "^1.3.1",
@@ -36,7 +37,8 @@
     "babel-jest": "^27.0.5",
     "eslint": "^8.13.0",
     "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-nuxt": "^2.0.0",
+    "eslint-plugin-nuxt": "^3.2.0",
+    "eslint-plugin-pug": "^1.2.4",
     "eslint-plugin-vue": "^7.12.1",
     "jest": "^27.0.5",
     "prettier": "^2.3.2",

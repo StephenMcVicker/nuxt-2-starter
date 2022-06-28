@@ -6,15 +6,15 @@
 </template>
 
 <script>
-export default {
-  props: {
-    menuIsOpen: {
-      default: false,
-      type: Boolean,
-      required: false
+  export default {
+    props: {
+      menuIsOpen: {
+        default: false,
+        type: Boolean,
+        required: false
+      }
     }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>

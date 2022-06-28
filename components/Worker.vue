@@ -23,36 +23,36 @@
 </template>
 
 <script>
-import Card from '@/components/ui/Card.vue';
-import VButton from '@/components/ui/Button.vue';
+  import Card from '@/components/ui/Card.vue';
+  import VButton from '@/components/ui/Button.vue';
 
-export default {
-  components: { Card, VButton },
-  props: {
-    worker: {
-      type: Object,
-      default() {
-        return {};
+  export default {
+    components: { Card, VButton },
+    props: {
+      worker: {
+        type: Object,
+        default () {
+          return {};
+        }
+      }
+    },
+    computed: {
+      fullName () {
+        return `${this.worker.firstName} ${this.worker.lastName}`;
+      },
+      initials () {
+        return `${this.worker.firstName.slice(0, 1)}${this.worker.lastName.slice(
+          0,
+          1
+        )}`;
+      }
+    },
+    methods: {
+      changeRoute () {
+        this.$router.push('TestPage');
       }
     }
-  },
-  computed: {
-    fullName() {
-      return `${this.worker.firstName} ${this.worker.lastName}`;
-    },
-    initials() {
-      return `${this.worker.firstName.slice(0, 1)}${this.worker.lastName.slice(
-        0,
-        1
-      )}`;
-    }
-  },
-  methods: {
-    changeRoute() {
-      this.$router.push('TestPage');
-    }
-  }
-};
+  };
 </script>
 
 <style lang="scss" scoped>
