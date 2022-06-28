@@ -74,13 +74,17 @@
     .pic {
       align-items: center;
       background-color: $primary-yellow;
+      border: 4px solid $primary-purple;
+      border-left-color: $primary-purple-light;
       border-radius: 50vh;
+      border-top-color: $primary-purple-light;
       color: $white;
       display: flex;
       font-weight: 900;
       height: 50px;
       justify-content: center;
       margin: 0 1rem;
+      padding: 2px;
       width: 50px;
     }
 

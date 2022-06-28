@@ -87,8 +87,12 @@
       border: 1px solid $primary-purple;
       border-radius: 50vh;
       color: $primary-font-color;
-      margin: .4rem 0;
+      margin: .8rem 0;
       padding: 1rem;
+
+      &:focus {
+        box-shadow: $card-box-shadow;
+      }
     }
 
     p {
