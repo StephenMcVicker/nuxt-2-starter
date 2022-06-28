@@ -65,7 +65,10 @@
 
 <style lang="scss" scoped>
   header {
-    margin-bottom: 5rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 3rem;
   }
   h2.small {
     font-size: 1rem;
