@@ -134,10 +134,6 @@ ls
     font-size: 16px;
     line-height: 26px;
   }
-
-  section {
-    border-bottom: 1px solid $grey;
-  }
 </style>
 
 <style lang="scss" scoped>

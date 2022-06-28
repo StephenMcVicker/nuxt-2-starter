@@ -83,7 +83,7 @@
       font-weight: 900;
       height: 50px;
       justify-content: center;
-      margin: 0 1rem;
+      margin: 0 1rem 0 0;
       padding: 2px;
       width: 50px;
     }
