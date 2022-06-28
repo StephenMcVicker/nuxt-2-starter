@@ -61,42 +61,42 @@
 </script>
 
 <style lang="scss" scoped>
-header {
-  margin-bottom: 5rem;
-}
-h2.small {
-  font-size: 1rem;
-}
-
-h3 {
-  span {
-    color: $primary-purple;
-    margin-left: .4rem;
+  header {
+    margin-bottom: 5rem;
   }
-}
-
-section.workers-search {
-  display: flex;
-  flex-direction: column;
-
-  input {
-    background-color: $white;
-    border: 1px solid $primary-purple;
-    border-radius: 50vh;
-    color: $primary-font-color;
-    margin: .4rem 0;
-    padding: 1rem;
+  h2.small {
+    font-size: 1rem;
   }
 
-  p {
+  h3 {
     span {
       color: $primary-purple;
       margin-left: .4rem;
     }
   }
 
-  section.results {
-    margin-top: .5rem;
+  section.workers-search {
+    display: flex;
+    flex-direction: column;
+
+    input {
+      background-color: $white;
+      border: 1px solid $primary-purple;
+      border-radius: 50vh;
+      color: $primary-font-color;
+      margin: .4rem 0;
+      padding: 1rem;
+    }
+
+    p {
+      span {
+        color: $primary-purple;
+        margin-left: .4rem;
+      }
+    }
+
+    section.results {
+      margin-top: .5rem;
+    }
   }
-}
 </style>
