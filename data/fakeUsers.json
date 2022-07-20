@@ -1,0 +1,14 @@
+{
+  "testWorkers": [
+    {
+      "id": 1,
+      "firstName": "Jackie",
+      "lastName": ""
+    },
+    {
+      "id": 2,
+      "firstName": "John",
+      "lastName": "Smith"
+    }
+  ]
+}

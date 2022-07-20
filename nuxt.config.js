@@ -4,7 +4,7 @@ export default {
   modern: true,
 
   head: {
-    title: 'social-worker',
+    title: 'nuxt-2-starter',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

@@ -4,10 +4,10 @@
 </template>
 
 <style lang="scss" scoped>
-.card {
-  background: $white;
-  border-radius: 6px;
-  box-shadow: $card-box-shadow;
-  padding: 0.5rem 1rem;
-}
+  .card {
+    background: $white;
+    border-radius: 6px;
+    box-shadow: $card-box-shadow;
+    padding: .5rem 1rem;
+  }
 </style>
