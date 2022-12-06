@@ -152,7 +152,7 @@ ls
       padding: 2rem 1rem;
 
       .logo {
-        background-color: $primary-purple;
+        background-color: $primary-blue;
         border-radius: 50vh;
         height: 50px;
         width: 50px;
@@ -203,7 +203,7 @@ ls
 
       &.active {
         background-color: $secondary-purple-lighter;
-        color: $primary-purple;
+        color: $primary-blue;
       }
     }
   }
