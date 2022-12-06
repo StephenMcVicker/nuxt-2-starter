@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "rm -rf node_modules/.cache && nuxt -p ${PORT:-3030}",
     "build": "nuxt build --modern=server",
     "start": "nuxt start --modern=server",
     "generate": "nuxt generate",

@@ -161,7 +161,7 @@ ls
   }
 
   .menu {
-    background-color: red;
+    background-color: $primary-blue;
     height: 100vh;
     left: -101%;
     position: fixed;

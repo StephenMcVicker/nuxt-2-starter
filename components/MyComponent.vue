@@ -1,5 +1,5 @@
 <template lang="pug">
-  h1 {{ message }}
+  h3 {{ message }}
 </template>
 
 <script>
@@ -14,7 +14,8 @@
 </script>
 
 <style lang="scss" scoped>
-  h1 {
-    color: red;
+  h3 {
+    background: $background-blue;
+    color: $primary-red;
   }
 </style>
