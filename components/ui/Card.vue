@@ -8,6 +8,6 @@
     background: $white;
     border-radius: 6px;
     box-shadow: $card-box-shadow;
-    padding: .5rem 1rem;
+    padding: 1rem;
   }
 </style>

@@ -3,21 +3,35 @@
     header
       h1 {{ $t('greeting', {name: 'Stephen'}) }}
     section
+      my-component(message="My test component")
+    section
+      p This page users middleware, code that runs before render of the page.
+      p in this example, it pulls in some fake users from a json file
+      ul.my-list(v-for="user in users")
+        li {{ user.firstName }}
+    section
+      v-card
+        h3 Card component
+        p This component uses the concept of "slots", the way renders child elements into a parent component
+    section
+      v-card
+        h3 Global Colors
+          .colors
+            .color(v-for="color in colors"
+                  :class="color")
 </template>
 
 <script>
-  import UserCard from '@/components/UserCard.vue';
-  import VButton from '@/components/ui/Button.vue';
+  import MyComponent from '@/components/MyComponent.vue';
+  import VCard from '@/components/ui/Card.vue';
 
   export default {
-    components: { Worker, UserCard, VButton },
+    components: { MyComponent, VCard },
     layout: 'default',
     middleware: ['test-users'],
     data () {
       return {
-        sortOptions: ['likes', 'location'],
-        sortBy: '',
-        search: ''
+        colors: ['blue', 'green', 'red', 'yellow']
       };
     },
     computed: {
@@ -61,32 +75,37 @@
     }
   }
 
-  section.workers-search {
+  section {
+    margin: 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .colors {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 1rem;
+    overflow-x: auto;
 
-    input {
-      background-color: $white;
-      border: 1px solid $primary-purple;
-      border-radius: 50vh;
-      color: $primary-font-color;
-      margin: .8rem 0;
-      padding: 1rem;
+    .color {
+      height: 100px;
+      min-width: 100px;
 
-      &:focus {
-        box-shadow: $card-box-shadow;
+      &.blue {
+        background: $primary-blue;
+      }
+
+      &.green {
+        background: $primary-green;
+      }
+
+      &.red {
+        background: $primary-red;
+      }
+
+      &.yellow {
+        background: $primary-yellow;
       }
     }
 
-    p {
-      span {
-        color: $primary-purple;
-        margin-left: .4rem;
-      }
-    }
-
-    section.results {
-      margin-top: .5rem;
-    }
   }
 </style>
