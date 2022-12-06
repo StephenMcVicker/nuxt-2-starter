@@ -9,6 +9,8 @@
       p in this example, it pulls in some fake users from a json file
       ul.my-list(v-for="user in users")
         li {{ user.firstName }}
+      p {{ $t('localText1') }}
+      p {{ $t('localText2') }}
     section
       v-card
         h3 Card component
@@ -109,3 +111,12 @@
 
   }
 </style>
+
+<i18n>
+  {
+    "en": {
+      "localText1": "This is text from i18n",
+      "localText2": "Just be careful how you format the JSON for it. Never leave a trailing comma"
+    }
+  }
+</i18n>
