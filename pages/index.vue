@@ -5,13 +5,6 @@
     section
       my-component(message="My test component")
     section
-      p This page users middleware, code that runs before render of the page.
-      p in this example, it pulls in some fake users from a json file
-      ul.my-list(v-for="user in users")
-        li {{ user.firstName }}
-      p {{ $t('localText1') }}
-      p {{ $t('localText2') }}
-    section
       v-card
         h3 Card component
         p This component uses the concept of "slots", the way renders child elements into a parent component
@@ -21,6 +14,13 @@
           .colors
             .color(v-for="color in colors"
                   :class="color")
+    section
+      p This page users middleware, code that runs before render of the page.
+      p in this example, it pulls in some fake users from a json file
+      ul.my-list(v-for="user in users")
+        li {{ user.firstName }}
+      p {{ $t('localText1') }}
+      p {{ $t('localText2') }}
 </template>
 
 <script>
