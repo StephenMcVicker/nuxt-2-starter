@@ -51,7 +51,7 @@
     "pug": "^3.0.2",
     "pug-plain-loader": "^1.1.0",
     "sass": "^1.42.0",
-    "sass-loader": "10",
+    "sass-loader": "13",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-recommended-vue": "^1.4.0",
