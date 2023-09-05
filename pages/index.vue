@@ -83,6 +83,8 @@
   }
 
   .colors {
+    @include fade-in;
+
     display: flex;
     flex-direction: row;
     gap: 1rem;
